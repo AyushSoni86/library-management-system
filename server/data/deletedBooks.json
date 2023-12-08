@@ -1,0 +1,57 @@
+[
+  {
+    "id": "3",
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "publisher": "Secker & Warburg",
+    "year": 1949
+  },
+  {
+    "id": "1",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "publisher": "Scribner",
+    "year": 1925
+  },{
+    "id": "15",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Philosophical Fiction",
+    "publisher": "HarperCollins",
+    "year": 1988
+  },
+  {
+    "id": "16",
+    "title": "Lord of the Flies",
+    "author": "William Golding",
+    "genre": "Allegorical",
+    "publisher": "Faber and Faber",
+    "year": 1954
+  },
+  {
+    "id": "17",
+    "title": "Crime and Punishment",
+    "author": "Fyodor Dostoevsky",
+    "genre": "Psychological Thriller",
+    "publisher": "The Russian Messenger",
+    "year": 1866
+  },
+  {
+    "id": "18",
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Gothic Fiction",
+    "publisher": "Ward, Lock and Company",
+    "year": 1890
+  },
+  {
+    "id": "19",
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "publisher": "Allen & Unwin",
+    "year": "1954-1955"
+  }
+]
