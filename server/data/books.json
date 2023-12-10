@@ -9,19 +9,11 @@
   },
   {
     "id": "8",
-    "title": "The Hobbit",
+    "title": "The Hobbit Gajju",
     "author": "J.R.R. Tolkien",
     "genre": "Fantasy",
     "publisher": "Allen & Unwin",
-    "year": "1937"
-  },
-  {
-    "id": "10",
-    "title": "One Hundred Years of Solitude",
-    "author": "Gabriel García Márquez",
-    "genre": "Magical Realism",
-    "publisher": "Harper & Row",
-    "year": "1967"
+    "year": "1936"
   },
   {
     "id": "11",
@@ -110,14 +102,6 @@
     "genre": "Post-Apocalyptic",
     "publisher": "Alfred A. Knopf",
     "year": "2006"
-  },
-  {
-    "id": "27",
-    "title": "Les Misérables",
-    "author": "Victor Hugo",
-    "genre": "Historical Fiction",
-    "publisher": "A. Lacroix, Verboeckhoven & Cie.",
-    "year": "1862"
   },
   {
     "id": "28",

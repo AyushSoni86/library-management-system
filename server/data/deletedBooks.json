@@ -102,5 +102,21 @@
     "genre": "Motivational",
     "publisher": "I dont know",
     "year": "2006"
+  },
+  {
+    "id": "27",
+    "title": "Les Misérables",
+    "author": "Victor Hugo",
+    "genre": "Historical Fiction",
+    "publisher": "A. Lacroix, Verboeckhoven & Cie.",
+    "year": "1862"
+  },
+  {
+    "id": "10",
+    "title": "One Hundred Years of Solitude",
+    "author": "Gabriel García Márquez",
+    "genre": "Magical Realism",
+    "publisher": "Harper & Row",
+    "year": "1967"
   }
 ]

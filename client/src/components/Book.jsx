@@ -8,6 +8,7 @@ const Book = () => {
   const navigate = useNavigate();
 
   const [book, setBook] = useState([]);
+
   useEffect(() => {
     axios
       .get(`http://localhost:3000/api/books/${bookID}`)
@@ -26,6 +27,14 @@ const Book = () => {
   const [isEditModalOpen, setEditModalOpen] = useState(false);
   const [isConfirmEditModalOpen, setConfirmEditModalOpen] = useState(false);
   const [editedBook, setEditedBook] = useState({ ...book });
+  // const [editedBook, setEditedBook] = useState({
+  //   id: "",
+  //   title: "",
+  //   author: "",
+  //   genre: "",
+  //   publisher: "",
+  //   year: "",
+  // });
 
   const handleCancelEdit = () => {
     // Close the confirmation modal
@@ -50,6 +59,8 @@ const Book = () => {
   };
 
   const handleEdit = () => {
+    setEditedBook(book);
+
     setEditModalOpen(true);
     // Add your edit logic here
     console.log(`Editing book with ID ${bookID}`);
@@ -87,7 +98,7 @@ const Book = () => {
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="bg-white p-8 rounded-md shadow-md text-center">
+      <div className="bg-yellow-50 p-8 rounded-md shadow-md text-center ">
         <h2 className="text-4xl font-bold mb-4">{book.title}</h2>
         <p className="text-lg font-semibold">Author: {book.author}</p>
         <p className="text-lg font-semibold">Genre: {book.genre}</p>
@@ -97,13 +108,13 @@ const Book = () => {
         <div className="mt-4">
           <button
             onClick={handleEdit}
-            className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4 hover:bg-blue-600"
+            className="bg-blue-500 text-white px-6 py-3 rounded-md mr-4 hover:bg-blue-600"
           >
             Edit
           </button>
           <button
             onClick={handleDelete}
-            className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+            className="bg-red-500 text-white px-6 py-3 rounded-md hover:bg-red-600"
           >
             Delete
           </button>
