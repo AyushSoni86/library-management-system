@@ -14,7 +14,8 @@
     "genre": "Classic",
     "publisher": "Scribner",
     "year": 1925
-  },{
+  },
+  {
     "id": "15",
     "title": "The Alchemist",
     "author": "Paulo Coelho",
@@ -53,5 +54,53 @@
     "genre": "Fantasy",
     "publisher": "Allen & Unwin",
     "year": "1954-1955"
+  },
+  {
+    "id": "4",
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Romance",
+    "publisher": "Thomas Egerton",
+    "year": "1813"
+  },
+  {
+    "id": "9",
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Gothic",
+    "publisher": "Lackington, Hughes, Harding, Mavor, & Jones",
+    "year": "1818"
+  },
+  {
+    "id": "5",
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "genre": "Coming-of-age",
+    "publisher": "Little, Brown and Company",
+    "year": "1951"
+  },
+  {
+    "id": "7",
+    "title": "Brave New World",
+    "author": "Aldous Huxley",
+    "genre": "Dystopian",
+    "publisher": "Chatto & Windus",
+    "year": "1932"
+  },
+  {
+    "id": "2",
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "publisher": "J.B. Lippincott & Co.",
+    "year": "1960"
+  },
+  {
+    "id": "MOMA1",
+    "title": "Unposted Letter",
+    "author": "Mahatria Ria",
+    "genre": "Motivational",
+    "publisher": "I dont know",
+    "year": "2006"
   }
 ]

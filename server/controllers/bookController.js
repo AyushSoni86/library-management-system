@@ -7,6 +7,24 @@ const deletedFilePath = path.join(__dirname, "..", "data", "deletedBooks.json");
 let books = loadBooks();
 let deletedBooks = loadDeletedBooks();
 
+const generateBookId = (genre, author, allBooks, deletedBooks) => {
+  const prefix = `${genre.slice(0, 2)}${author.slice(0, 2)}`.toUpperCase();
+  const allBooksAndDeleted = [...allBooks, ...deletedBooks];
+
+  // Extract existing IDs from both 'books' and 'deletedBooks'
+  const existingIds = new Set(allBooksAndDeleted.map((book) => book.id));
+
+  // Generate a new unique ID
+  let newId;
+  let attempt = 1;
+  do {
+    newId = `${prefix}${attempt}`;
+    attempt++;
+  } while (existingIds.has(newId));
+
+  return newId;
+};
+
 function loadBooks() {
   try {
     const data = fs.readFileSync(dataFilePath, "utf-8");
@@ -49,6 +67,9 @@ function saveDeletedBooks() {
 }
 
 const createBook = (newBook) => {
+
+  newBook.id = generateBookId(newBook.genre, newBook.author, books, deletedBooks);
+  
   const existingBook = books.find(
     (b) => b.title === newBook.title && b.author === newBook.author
   );
