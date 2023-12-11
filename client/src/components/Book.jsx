@@ -7,6 +7,17 @@ const Book = () => {
   const navigate = useNavigate();
 
   const [book, setBook] = useState([]);
+  const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const [isConfirmEditModalOpen, setConfirmEditModalOpen] = useState(false);
+  const [editedBook, setEditedBook] = useState({ ...book });
+  const [errorMessages, setErrorMessages] = useState({
+    title: "",
+    author: "",
+    genre: "",
+    publisher: "",
+    year: "",
+  });
 
   useEffect(() => {
     axios
@@ -20,26 +31,43 @@ const Book = () => {
       });
   }, [bookID]);
 
-  // const selectedBook = sampleBooks.find((book) => book.id == bookID);
-
-  const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
-  const [isEditModalOpen, setEditModalOpen] = useState(false);
-  const [isConfirmEditModalOpen, setConfirmEditModalOpen] = useState(false);
-  const [editedBook, setEditedBook] = useState({ ...book });
-  // const [editedBook, setEditedBook] = useState({
-  //   id: "",
-  //   title: "",
-  //   author: "",
-  //   genre: "",
-  //   publisher: "",
-  //   year: "",
-  // });
-
   const handleCancelEdit = () => {
-    // Close the confirmation modal
-    setConfirmEditModalOpen(false);
-    // Close the edit modal
     setEditModalOpen(false);
+  };
+
+  const handleCancelEdit2 = () => {
+    setConfirmEditModalOpen(false);
+  };
+
+  const handleRequired = () => {
+    const isValid = validateForm();
+
+    setConfirmEditModalOpen(isValid ? true : false);
+  };
+
+  const validateForm = () => {
+    // Validate each field and set error messages
+    const errors = {};
+    if (!editedBook.title) {
+      errors.title = "Title is required";
+    }
+    if (!editedBook.author) {
+      errors.author = "Author is required";
+    }
+    if (!editedBook.genre) {
+      errors.genre = "Genre is required";
+    }
+    if (!editedBook.publisher) {
+      errors.publisher = "Publisher is required";
+    }
+    if (!editedBook.year) {
+      errors.year = "Year is required";
+    }
+
+    setErrorMessages(errors);
+
+    // Return true if the form is valid, false otherwise
+    return Object.keys(errors).length === 0;
   };
 
   const handleSaveEdit = async () => {
@@ -59,14 +87,11 @@ const Book = () => {
 
   const handleEdit = () => {
     setEditedBook(book);
-
     setEditModalOpen(true);
-    // Add your edit logic here
     console.log(`Editing book with ID ${bookID}`);
   };
 
   const handleDelete = () => {
-    // Add your delete logic here
     setDeleteModalOpen(true);
   };
 
@@ -84,7 +109,6 @@ const Book = () => {
   };
 
   const handleCancelDelete = () => {
-    // Close the delete modal
     setDeleteModalOpen(false);
   };
 
@@ -93,11 +117,16 @@ const Book = () => {
       ...editedBook,
       [e.target.name]: e.target.value,
     });
+
+    setErrorMessages({
+      ...errorMessages,
+      [e.target.name]: "",
+    });
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <div className="bg-yellow-50 p-8 rounded-md shadow-md text-center ">
+      <div className="bg-yellow-100 p-8 rounded-md shadow-md text-center ">
         <h2 className="text-4xl font-bold mb-4">{book.title}</h2>
         <p className="text-lg font-semibold">Author: {book.author}</p>
         <p className="text-lg font-semibold">Genre: {book.genre}</p>
@@ -107,13 +136,13 @@ const Book = () => {
         <div className="mt-4">
           <button
             onClick={handleEdit}
-            className="bg-blue-500 text-white px-6 py-3 rounded-md mr-4 hover:bg-blue-600"
+            className="bg-blue-500 text-white text-lg ml-4 mr-10 px-8 py-3 rounded-md  hover:bg-blue-600"
           >
             Edit
           </button>
           <button
             onClick={handleDelete}
-            className="bg-red-500 text-white px-6 py-3 rounded-md hover:bg-red-600"
+            className="bg-red-500 text-white text-lg px-8 py-3 rounded-md hover:bg-red-600"
           >
             Delete
           </button>
@@ -165,7 +194,11 @@ const Book = () => {
                     value={editedBook.title}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 text-lg"
+                    required
                   />
+                  <span className="text-red-500 text-sm">
+                    {errorMessages.title}
+                  </span>
                 </div>
                 <div className="mb-6 text-left">
                   <label
@@ -181,7 +214,11 @@ const Book = () => {
                     value={editedBook.author}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 text-lg"
+                    required
                   />
+                  <span className="text-red-500 text-sm">
+                    {errorMessages.author}
+                  </span>
                 </div>
                 <div className="mb-6 text-left">
                   <label
@@ -197,7 +234,11 @@ const Book = () => {
                     value={editedBook.genre}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 text-lg"
+                    required
                   />
+                  <span className="text-red-500 text-sm">
+                    {errorMessages.genre}
+                  </span>
                 </div>
                 <div className="mb-6 text-left">
                   <label
@@ -213,7 +254,11 @@ const Book = () => {
                     value={editedBook.publisher}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 text-lg"
+                    required
                   />
+                  <span className="text-red-500 text-sm">
+                    {errorMessages.publisher}
+                  </span>
                 </div>
                 <div className="mb-6 text-left">
                   <label
@@ -229,13 +274,17 @@ const Book = () => {
                     value={editedBook.year}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-400 rounded-md focus:outline-none focus:border-blue-500 text-lg"
+                    required
                   />
+                  <span className="text-red-500 text-sm">
+                    {errorMessages.year}
+                  </span>
                 </div>
                 {/* Repeat similar blocks for other fields (author, genre, year, publisher) */}
                 <div className="flex justify-between gap-4">
                   <button
                     type="button"
-                    onClick={() => setConfirmEditModalOpen(true)}
+                    onClick={handleRequired}
                     className="bg-blue-500 text-lg text-white px-10 py-3 rounded-md hover:bg-blue-600 focus:outline-none"
                   >
                     Edit
@@ -268,7 +317,7 @@ const Book = () => {
                   Save
                 </button>
                 <button
-                  onClick={handleCancelEdit}
+                  onClick={handleCancelEdit2}
                   className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
                 >
                   Cancel

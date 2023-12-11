@@ -14,7 +14,7 @@ const Books = () => {
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   return (
     <>
@@ -43,7 +43,7 @@ const Books = () => {
         {books.map((book) => (
           // <Book key={book.id} {...book} />
           <Link to={`/books/${book.id}`} key={book.id}>
-            <div className="bg-white p-4 mb-4 rounded-md shadow-md">
+            <div className="bg-white p-4 mb-4 rounded-md shadow-md"  style={{ backgroundColor: "#ffd58ab8"}}>
               <h3 className="text-lg font-semibold mb-2">{book.title}</h3>
               <p className="text-gray-600">Author: {book.author}</p>
               <p className="text-gray-600">Genre: {book.genre}</p>

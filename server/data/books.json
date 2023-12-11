@@ -1,43 +1,11 @@
 [
   {
-    "id": "6",
-    "title": "To the Lighthouse",
-    "author": "Virginia Woolf",
-    "genre": "Modernist",
-    "publisher": "Hogarth Press",
-    "year": "1927"
-  },
-  {
-    "id": "8",
-    "title": "The Hobbit Gajju",
-    "author": "J.R.R. Tolkien",
-    "genre": "Fantasy",
-    "publisher": "Allen & Unwin",
-    "year": "1936"
-  },
-  {
-    "id": "11",
-    "title": "The Odyssey",
-    "author": "Homer",
-    "genre": "Epic Poetry",
-    "publisher": "N/A",
-    "year": "8th century BCE"
-  },
-  {
     "id": "12",
-    "title": "The Shining",
+    "title": "The Shining Flexur",
     "author": "Stephen King",
     "genre": "Horror",
     "publisher": "Doubleday",
     "year": "1977"
-  },
-  {
-    "id": "13",
-    "title": "Moby-Dick",
-    "author": "Herman Melville",
-    "genre": "Adventure",
-    "publisher": "Richard Bentley",
-    "year": "1851"
   },
   {
     "id": "14",
@@ -96,14 +64,6 @@
     "year": "1939"
   },
   {
-    "id": "26",
-    "title": "The Road",
-    "author": "Cormac McCarthy",
-    "genre": "Post-Apocalyptic",
-    "publisher": "Alfred A. Knopf",
-    "year": "2006"
-  },
-  {
     "id": "28",
     "title": "Dune",
     "author": "Frank Herbert",
@@ -118,14 +78,6 @@
     "genre": "Historical Romance",
     "publisher": "Macmillan Publishers",
     "year": "1936"
-  },
-  {
-    "id": "30",
-    "title": "Love Babbar Gajju",
-    "author": "Alexandre Parbani",
-    "genre": "Adventure",
-    "publisher": "Pétion XYZ",
-    "year": "1504"
   },
   {
     "id": "FIMA1",
@@ -154,6 +106,22 @@
   {
     "id": "FIFR2",
     "title": "Dune 123",
+    "author": "Frank Herbert Eins",
+    "genre": "Fiction",
+    "publisher": "I dont know",
+    "year": "1503"
+  },
+  {
+    "title": "Man who sold his",
+    "author": "Robin Sharma",
+    "genre": "Historical",
+    "publisher": "A. Lacroix, Verboeckhoven & Cie.",
+    "year": "1862",
+    "id": "HIRO2"
+  },
+  {
+    "id": "FIFR3",
+    "title": "Dune 123 Gajanan",
     "author": "Frank Herbert Eins",
     "genre": "Fiction",
     "publisher": "I dont know",

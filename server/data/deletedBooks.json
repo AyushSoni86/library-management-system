@@ -126,5 +126,53 @@
     "publisher": "Richard Bentley",
     "year": "1851",
     "id": "RELO1"
+  },
+  {
+    "id": "6",
+    "title": "To the Lighthouse",
+    "author": "Virginia Woolf",
+    "genre": "",
+    "publisher": "Hogarth Press HElOOOO",
+    "year": "1927"
+  },
+  {
+    "id": "8",
+    "title": "The Hobbit Gajju",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fiction",
+    "publisher": "Allen & Unwin",
+    "year": "1936"
+  },
+  {
+    "id": "13",
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "genre": "Adventure",
+    "publisher": "Richard Bentley",
+    "year": "1851"
+  },
+  {
+    "id": "26",
+    "title": "The Road of Pune",
+    "author": "Cormac McCarthy",
+    "genre": "Post-Apocalyptic",
+    "publisher": "Alfred A. Knopf",
+    "year": "2006"
+  },
+  {
+    "id": "11",
+    "title": "The Odyssey",
+    "author": "Homer",
+    "genre": "Epic Poetry",
+    "publisher": "N/A",
+    "year": "8th century BCE"
+  },
+  {
+    "id": "30",
+    "title": "Love Babbar Gajju",
+    "author": "Alexandre Parbani",
+    "genre": "Adventure",
+    "publisher": "Pétion XYZ",
+    "year": "1504"
   }
 ]
