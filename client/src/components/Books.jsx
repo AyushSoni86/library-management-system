@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Book from "./Book";
 import { Link } from "react-router-dom";
-import sampleBooks from "./SampleBooks";
 import axios from "axios";
 
 const Books = () => {

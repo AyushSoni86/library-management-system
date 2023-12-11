@@ -121,10 +121,42 @@
   },
   {
     "id": "30",
-    "title": "Love Babbar",
-    "author": "Alexandre",
+    "title": "Love Babbar Gajju",
+    "author": "Alexandre Parbani",
     "genre": "Adventure",
     "publisher": "Pétion XYZ",
+    "year": "1504"
+  },
+  {
+    "id": "FIMA1",
+    "title": "The Shining",
+    "author": "Mahatria Ria",
+    "genre": "Fiction",
+    "publisher": "I dont know",
+    "year": "1503"
+  },
+  {
+    "id": "FIFR1",
+    "title": "Dune",
+    "author": "Frank Herbert Eins",
+    "genre": "Fiction",
+    "publisher": "I dont know",
+    "year": "1503"
+  },
+  {
+    "title": "Man who sold his Ferrari",
+    "author": "Robin Sharma",
+    "genre": "Historical Fiction",
+    "publisher": "A. Lacroix, Verboeckhoven & Cie.",
+    "year": "1862",
+    "id": "HIRO1"
+  },
+  {
+    "id": "FIFR2",
+    "title": "Dune 123",
+    "author": "Frank Herbert Eins",
+    "genre": "Fiction",
+    "publisher": "I dont know",
     "year": "1503"
   }
 ]

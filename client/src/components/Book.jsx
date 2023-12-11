@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import sampleBooks from "./SampleBooks";
 import axios from "axios";
 
 const Book = () => {

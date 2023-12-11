@@ -96,14 +96,6 @@
     "year": "1960"
   },
   {
-    "id": "MOMA1",
-    "title": "Unposted Letter",
-    "author": "Mahatria Ria",
-    "genre": "Motivational",
-    "publisher": "I dont know",
-    "year": "2006"
-  },
-  {
     "id": "27",
     "title": "Les Misérables",
     "author": "Victor Hugo",
@@ -118,5 +110,21 @@
     "genre": "Magical Realism",
     "publisher": "Harper & Row",
     "year": "1967"
+  },
+  {
+    "id": "MOMA1",
+    "title": "Unposted Letter",
+    "author": "Mahatria Ria",
+    "genre": "Motivational",
+    "publisher": "I dont know",
+    "year": "2006"
+  },
+  {
+    "title": "Updated Test Book",
+    "author": "Lord Krishna",
+    "genre": "Religious",
+    "publisher": "Richard Bentley",
+    "year": "1851",
+    "id": "RELO1"
   }
 ]

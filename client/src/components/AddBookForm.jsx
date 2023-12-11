@@ -31,7 +31,24 @@ const AddBookForm = () => {
     setConfirmationModalOpen(true);
   };
 
+  const [fieldMandatory, setFieldMandatory] = useState(false);
+
   const handleConfirmAdd = async () => {
+    if (
+      !newBook.title ||
+      !newBook.author ||
+      !newBook.genre ||
+      !newBook.publisher ||
+      !newBook.year
+    ) {
+      // Display an error message or handle the error as needed
+      setFieldMandatory(true)
+      console.error("All fields are mandatory");
+      return;
+    }
+
+    setFieldMandatory(false) ;
+
     try {
       // Make a POST request to add a new book
       await axios.post("http://localhost:3000/api/books", newBook);
@@ -41,6 +58,9 @@ const AddBookForm = () => {
       navigateTo("/books");
     } catch (error) {
       console.error("Error adding book:", error);
+      setConfirmationModalOpen(false);
+      setExistingBookModal(true);
+      return;
       // Handle error if needed
     }
   };
@@ -53,6 +73,19 @@ const AddBookForm = () => {
   const handleCancel = () => {
     // Redirect to the home page when the "Cancel" button is clicked
     navigateTo("/");
+  };
+
+  const [isExistingBookModalOpen, setExistingBookModal] = useState(false);
+ 
+
+  const handleCancelExistingBook = () => {
+    // Close the existing book modal
+    setExistingBookModal(false);
+  };
+
+  const handleFieldMandatory = () => {
+    // Close the existing book modal
+    setFieldMandatory(false);
   };
 
   return (
@@ -183,6 +216,42 @@ const AddBookForm = () => {
                 className="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600"
               >
                 Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {isExistingBookModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-md shadow-md text-center">
+            <p className="text-xl font-semibold mb-4">
+              This book already exists in the library...!!!
+            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={handleCancelExistingBook}
+                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {fieldMandatory && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-8 rounded-md shadow-md text-center">
+            <p className="text-xl font-semibold mb-4">
+              All Fields are Mandatory...!!!
+            </p>
+            <div className="flex justify-center">
+              <button
+                onClick={handleFieldMandatory}
+                className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+              >
+                OK
               </button>
             </div>
           </div>
